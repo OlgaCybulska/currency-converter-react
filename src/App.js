@@ -1,21 +1,31 @@
 import "./App.css";
 import { useState } from "react";
+import { currencies } from "./currecies";
 import Form from "./Form";
-import Currencies from "./Currencies";
+import Result from "./Result";
 
 
 function App() {
-  const [result, setResult] = useState(0);
+  
+  const [result, setResult] = useState();
 
-  const countResult = ( amount, rate ) => {
-    return setResult = amount / rate;
-    
+  const calculateResult = (currency, amount) => {
+
+    const rate = currencies.find(({ short }) => short === currency).rate
+
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: amount / rate ,
+      currency,
+    });
   };
 
-  let wynik = setResult.value;
-
   return (
-    <Form countResult={countResult} result={result} setResult={setResult} wynik={wynik}/>
+    <>
+      <Form calculateResult={calculateResult} result={result} />
+      <Result />
+      
+    </>
   );
 }
 

@@ -1,15 +1,15 @@
 import "./style.css";
 import { useState } from "react";
-import Currencies from "../Currencies";
+import { currencies } from "../currecies";
 
-const Form = ( rate, name, countResult ) => {
-  const [amount, setAmount] = useState(1);
-  const [Currecy, setCurrecy ] = useState(Currencies[0].name);
+const Form = ( {calculateResult, result }) => {
+  
+  const [amount, setAmount] = useState("");
+  const [currency, setCurrecy] = useState(currencies[0].short);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    countResult(amount, rate);
-    setAmount(1);
+    calculateResult(amount, currency);
   };
 
   return (
@@ -27,7 +27,6 @@ const Form = ( rate, name, countResult ) => {
               type="number"
               min="1"
               step="0.01"
-              autoFocus
             />
           </label>
         </div>
@@ -35,28 +34,29 @@ const Form = ( rate, name, countResult ) => {
           <label>
             <select
               className="form__field"
-              value={name}
-              onChange={({ target }) => setCurrecy(target.name)}
+              value={currency}
+              onChange={({ target }) => setCurrecy(target.value)}
             >
-              <option> Euro </option>
-              <option> Dolar Amerykański </option>
-              <option> Funt Brytyjski </option>
-              <option> Frank Szwajcarski </option>
+              {currencies.map((currency) => (
+                <option 
+                key={currency.short} 
+                value={currency.short}
+                >
+                  {currency.name}
+                </option>
+              ))}
             </select>
           </label>
         </div>
         <p>
           <strong>Przelicz:</strong>
         </p>
-        <button className="form__button" onClick={countResult}>
+        <button className="form__button">
           [PLN] na [EUR]:
         </button>
       </fieldset>
       <p className="form__text--important">*pole wymagane</p>
-      <p>
-        Po wymianie <strong>{amount}</strong> zł otrzymasz{" "}
-        <strong>{}</strong> <strong>{}</strong>
-      </p>
+     <div> {amount} {currency} {}</div>
     </form>
   );
 };

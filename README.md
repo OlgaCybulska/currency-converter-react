@@ -1,3 +1,24 @@
+# Currrency Converter
+
+You can convert PLN into EUR, USD, GBP or CHF.
+
+![screen](https://github.com/OlgaCybulska/currency-converter-react/blob/main/currency-converter-view.png)
+
+1. You must enter the amount you want to exchange.
+2. You mast select the currency.
+3. Press the button to convert.
+   
+![screen](https://github.com/OlgaCybulska/currency-converter-react/blob/main/currency-converter-result.png)
+
+##Technologies used to make the page:
+- HTLM
+- CSS
+- JavaScript
+- React
+
+#Demo
+https://olgacybulska.github.io/currency-converter-react/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

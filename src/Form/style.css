@@ -1,6 +1,10 @@
+.form {
+    max-width: 500px;
+    margin: auto;
+}
 
 .form__labelText {
-    max-width: 200px;
+
     width: 100%;
     display: inline-block;
     text-align: left;
@@ -9,34 +13,34 @@
 .form__field {
     border: 2px double hsl(254, 87%, 35%);
     border-radius: 4px;
-    width: 100px;
+    width: 200px;
     padding: 5px;
     text-align: center;
 }
 
 .form__button {
-    width: 70%;
-    background-color: hsl(240, 60%, 50%);
+    width: 200px;
+    background-color: hsl(240, 70%, 50%);
     color: white;
     border-radius: 4px;
     border: none;
+    padding: 5px;
+    margin: 15px;
 }
 
-.form__button--reset {
-    background-color: hsl(240, 70%, 50%);
-}
 .form__button:hover {
-    background-color: hsl(200, 80%, 50%);
+    background-color: hsl(240, 70%, 60%);
     color: black;
 }
 
 .form__button:active {
-    background-color: hsl(200, 72%, 22%);
+    background-color: hsl(240, 70%, 50%);
     color: black;
 }
+
 .form__fildset {
     background-color: hsl(49, 38%, 89%);
-    border: 2px solid hsl(240, 70%, 50%) ;
+    border: 2px solid hsl(240, 70%, 50%);
     border-radius: 5px;
     padding: 15px;
     margin: 10px;
@@ -51,9 +55,12 @@
 }
 
 .form__field:invalid {
-    background-color: rgb(177, 103, 90);
+    background-color: hsl(9, 36%, 70%);
+
 }
 
 .form__text--important {
     text-align: left;
+    margin-left: 15px;
+    margin-top: 0px;
 }

@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  background-image: url("money-background.png");
 }
 
 *, ::after, ::before {
@@ -8,7 +9,7 @@ html {
 }
 
 #root {
-  background-image: url("money-background.png");
+
   width: 100%;
   margin: 5px auto;
   text-align: center;

@@ -1,11 +1,16 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { currencies } from "../currecies";
 import Result from "./Result";
 
 const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = useState("");
   const [currency, setCurrecy] = useState(currencies[0].short);
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +26,7 @@ const Form = ({ calculateResult, result }) => {
           <div>
             <label>
               <input
+                ref={inputRef}
                 className="form__field"
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
@@ -47,7 +53,9 @@ const Form = ({ calculateResult, result }) => {
               </select>
             </label>
           </div>
-          <button className="form__button">Przelicz:</button>
+          <button className="form__button" onClick={focusInput}>
+            Przelicz:
+          </button>
         </fieldset>
         <p className="form__text--important">*pole wymagane</p>
       </form>

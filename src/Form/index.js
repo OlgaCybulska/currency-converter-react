@@ -1,7 +1,15 @@
-import "./style.css";
 import { useState, useRef } from "react";
 import { currencies } from "../currecies";
 import Result from "./Result";
+import {
+  CalculateForm,
+  Fieldset,
+  Legend,
+  Input,
+  Select,
+  Button,
+  Important,
+} from "./styled";
 
 const Form = ({ calculateResult, result }) => {
   const [amount, setAmount] = useState("");
@@ -19,15 +27,14 @@ const Form = ({ calculateResult, result }) => {
 
   return (
     <>
-      <form className="form" onSubmit={onFormSubmit}>
-        <fieldset className="form__fildset">
-          <legend className="form__legend">Kalkulator walut </legend>
+      <CalculateForm onSubmit={onFormSubmit}>
+        <Fieldset>
+          <Legend>Kalkulator walut </Legend>
           <p>Wpisz kwotę w złotych, którą chcesz wymienić:</p>
           <div>
             <label>
-              <input
+              <Input
                 ref={inputRef}
-                className="form__field"
                 value={amount}
                 onChange={({ target }) => setAmount(target.value)}
                 required
@@ -40,8 +47,7 @@ const Form = ({ calculateResult, result }) => {
           <div>
             <p>Wybierz walutę, na którą chcesz wymienić:</p>
             <label>
-              <select
-                className="form__field"
+              <Select
                 value={currency}
                 onChange={({ target }) => setCurrecy(target.value)}
               >
@@ -50,15 +56,13 @@ const Form = ({ calculateResult, result }) => {
                     {currency.name}
                   </option>
                 ))}
-              </select>
+              </Select>
             </label>
           </div>
-          <button className="form__button" onClick={focusInput}>
-            Przelicz:
-          </button>
-        </fieldset>
-        <p className="form__text--important">*pole wymagane</p>
-      </form>
+          <Button onClick={focusInput}>Przelicz:</Button>
+        </Fieldset>
+        <Important>*pole wymagane</Important>
+      </CalculateForm>
 
       <Result result={result} />
     </>

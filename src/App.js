@@ -3,6 +3,7 @@ import { useState } from "react";
 import { currencies } from "./currecies";
 import Form from "./Form";
 import Clock from "./Clock";
+import { ThemeProvider } from "styled-components";
 
 function App() {
   const [result, setResult] = useState();
@@ -21,11 +22,17 @@ function App() {
     });
   };
 
+  const theme = {
+    breakpoints: {
+      mobile: 767,
+    },
+  };
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Clock />
       <Form calculateResult={calculateResult} result={result} />
-    </>
+    </ThemeProvider>
   );
 }
 

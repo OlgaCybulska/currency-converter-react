@@ -1,13 +1,13 @@
 import useCurrentData from "../useCurrentData";
-import "./style.css";
+import { Container } from "./styled";
 
 const Clock = () => {
   const { formattedDate } = useCurrentData();
 
   return (
-    <div className="clock">
+    <Container>
       <p>Dziś jest {formattedDate}</p>
-    </div>
+    </Container>
   );
 };
 

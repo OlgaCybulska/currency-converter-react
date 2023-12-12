@@ -3,9 +3,9 @@ export const Result = ({ result }) => (
     {!!result && (
       <>
         Po wymianie <strong>{result.sourceAmount.toFixed(2)}&nbsp;</strong>{" "}
-        złotych&nbsp; otrzymasz&nbsp;
+        PLN&nbsp; otrzymasz&nbsp;
         <strong>{result.targetAmount.toFixed(2)}&nbsp;</strong>
-        {result.resultName}
+        {result.short}
       </>
     )}
   </p>

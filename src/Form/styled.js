@@ -60,3 +60,10 @@ export const Important = styled.p`
   margin-left: 15px;
   margin-top: 0px;
 `;
+
+export const Loading = styled.p`
+  color: teal;
+`;
+export const Failure = styled.p`
+  color: red;
+`;

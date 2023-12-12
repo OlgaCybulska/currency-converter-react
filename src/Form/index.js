@@ -47,9 +47,9 @@ const Form = () => {
     <>
       <CalculateForm onSubmit={onFormSubmit}>
         {ratesData.state === "loading" ? (
-          <Loading> jest git</Loading>
+          <Loading> Ładujemy aktualne kursy walut 😉 </Loading>
         ) : ratesData.state === "error" ? (
-          <Failure> nie jest dobrze</Failure>
+          <Failure>Ups... Coś poszło nie tak... Odswież stronę </Failure>
         ) : (
           <>
             <Fieldset>
@@ -86,7 +86,6 @@ const Form = () => {
             <Important>*pole wymagane</Important>
           </>
         )}
-        ;
       </CalculateForm>
 
       <Result result={result} />

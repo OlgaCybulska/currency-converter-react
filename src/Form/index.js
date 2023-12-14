@@ -16,7 +16,7 @@ import {
 const Form = () => {
   const ratesData = useRatesData();
   const inputRef = useRef(null);
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState();
 
@@ -24,14 +24,12 @@ const Form = () => {
   const onSelectFromChange = ({ target }) => setCurrency(target.value);
 
   const calculateResult = (amount, currency) => {
-    const rate = ratesData?.data?.data?.[currency].value;
-    const short = ratesData?.data?.data?.[currency].code;
+    const rate = ratesData?.data?.[currency].value;
 
     setResult({
       sourceAmount: +amount,
       targetAmount: amount * rate,
       currency,
-      short,
     });
   };
   const focusInput = () => {

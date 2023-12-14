@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 export const useRatesData = () => {
   const [ratesData, setRatesData] = useState({
     state: "loading",
-    rateValues: [{ code: "PLN", value: 1 }],
   });
 
   useEffect(() => {

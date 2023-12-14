@@ -5,7 +5,7 @@ export const Result = ({ result }) => (
         Po wymianie <strong>{result.sourceAmount.toFixed(2)}&nbsp;</strong>{" "}
         PLN&nbsp; otrzymasz&nbsp;
         <strong>{result.targetAmount.toFixed(2)}&nbsp;</strong>
-        {result.short}
+        {result.currency}
       </>
     )}
   </p>

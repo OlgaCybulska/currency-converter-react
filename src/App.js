@@ -1,4 +1,4 @@
-import "./App.css";
+import { GlobalStyle } from "./GlobalStyle";
 import Form from "./Form";
 import Clock from "./Clock";
 import { ThemeProvider } from "styled-components";
@@ -12,6 +12,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Clock />
       <Form />
     </ThemeProvider>
